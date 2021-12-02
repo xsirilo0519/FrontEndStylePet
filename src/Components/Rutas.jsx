@@ -1,21 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Navigate ,Route, Routes } from 'react-router';
 import Home from './Home'
 import MisMascotas from './Pages/MisMascotasPage'
-import Citas from './Pages/CitasPage'
+import {Citas} from '../Controllers/CitasController'
 import NotFound from './NoFound'
+import { UserContext } from '../Context/UserContext';
 
 
-function Rutas() {
-
+function Rutas() { 
+    const {isLogin}=useContext(UserContext);
+    const privateRoute=()=>{
+         return <Navigate to="/"></Navigate>
+        }
+    
 
     return (
     <Routes>
         <Route path="/" exact element={<Home/>}/>
-        <Route path="/Mis_Mascotas" exact element={<MisMascotas/>}/>
-        <Route path="/Citas" exact element={<Citas/>}/>
+        <Route path="/Mis_Mascotas" exact element={ isLogin?<MisMascotas/>:privateRoute()}/>
+        <Route path="/Citas" exact element={isLogin?<Citas/>:privateRoute()}/>
         <Route path="/404" exact element={<NotFound/>}/>
-        <Route  path="*" element={<Navigate to="/404"></Navigate>}></Route>
+        <Route path="*" element={<Navigate to="/404"></Navigate>}></Route>
     </Routes>
     );
 }

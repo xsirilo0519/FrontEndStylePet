@@ -7,7 +7,7 @@ import {UserContext} from '../Context/UserContext'
 import { Link } from 'react-router-dom';
 
 function NavBar() {
-    const {isLogin, setIsLogin}=useContext(UserContext);
+    const {isLogin}=useContext(UserContext);
     
     return (
         <div className="Navbar-container">
