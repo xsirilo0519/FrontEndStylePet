@@ -24,7 +24,7 @@ export const getEstilista=async(setList)=>{
      const [estilista,setEstilista]=useState([]);
      const [mascota,setMascota]=useState([]);
      const [form,setForm]=useState([]);
-
+    const [msg,setMsg]=useState("");
      useEffect(()=>{
     
         getEstilista(setEstilista);
@@ -34,21 +34,30 @@ export const getEstilista=async(setList)=>{
    
         setForm({
             codigo_mascotas:{
-                codigo:0
+                codigo:"0"
             },
             id_corte:{
-                id:0
+                id:"0"
             },
             estilista:{
-                cedula:0
+                cedula:"0"
             },
-            hora:""
+            hora:"0"
         })
      },[])
 
+     const ConfirmarValores=()=>{
+        console.log(form);
+        if(form.codigo_mascotas.codigo==="0"||form.id_corte.id==="0"||form.estilista.cedula==="0"||form.hora==="0"){
+            setMsg("Seleccione todos los campos");
+        }else{
+            setMsg("");
+        }
+    }
+
     return(
         <Fragment>
-            {<CitasView cortes={cortes}  estilistas={estilista} mascotas={mascota} form={form} setForm={setForm}></CitasView>}
+            {<CitasView cortes={cortes}  estilistas={estilista} mascotas={mascota} form={form} setForm={setForm} msg={msg} ConfirmarValores={ConfirmarValores}></CitasView>}
             <CitasPage ></CitasPage>
         </Fragment>
     )
