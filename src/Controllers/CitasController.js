@@ -32,7 +32,6 @@ export const addCita=async(form)=>{
         },
         hora:form.hora
     }
-    console.log(data);
     const aux= await axios.post(HOST_API_CITAS+"/agregar",data).then(res=>{ return res.data})
     console.log(aux);
     console.log("addlista");
@@ -44,8 +43,9 @@ export const addCita=async(form)=>{
      const [mascota,setMascota]=useState([]);
      const [form,setForm]=useState([]);
     const [msg,setMsg]=useState("");
+
      useEffect(()=>{
-    
+
         getEstilista(setEstilista);
         getCortes(setCortes);
         setMascota([{codigo:"1"},{codigo:"2"}])

@@ -5,6 +5,7 @@ import MisMascotas from './Pages/MisMascotasPage'
 import {Citas} from '../Controllers/CitasController'
 import NotFound from './NoFound'
 import { UserContext } from '../Context/UserContext';
+import LoginPage from '../Components/Pages/LoginPage'
 
 
 function Rutas() { 
@@ -20,6 +21,7 @@ function Rutas() {
         <Route path="/Mis_Mascotas" exact element={ isLogin?<MisMascotas/>:privateRoute()}/>
         <Route path="/Citas" exact element={isLogin?<Citas/>:privateRoute()}/>
         <Route path="/404" exact element={<NotFound/>}/>
+        <Route path="/Login" exact element={<LoginPage/>}/>
         <Route path="*" element={<Navigate to="/404"></Navigate>}></Route>
     </Routes>
     );
