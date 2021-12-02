@@ -1,0 +1,19 @@
+#footer{
+    text-align: center;
+    z-index: 9;
+    width: auto;
+    height: 105px;
+    background: #5E6472;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#media-icon{width: 50px;
+cursor: pointer;
+margin: 10px;}
+
+#footer p{
+    margin-top: 10px;
+}

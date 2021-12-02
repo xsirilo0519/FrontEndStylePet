@@ -7,7 +7,7 @@ export const MenuNoLogin=[
 
 export const MenuLogin=[
     {
-        titulo:'Mis mascotas',
+        titulo:'Mascotas',
         url:'/Mis_Mascotas'
     },
     {

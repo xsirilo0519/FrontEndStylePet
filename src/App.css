@@ -1,16 +1,20 @@
+*{
+  padding: 0;
+  margin: 0;
+  font-family: 'TituloFont';
+  font-weight: 100;
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  box-sizing:content-box;
+}
+@font-face {
+  font-family: "TituloFont";
+  src: url("/src/assets/Font/cream-DEMO.otf");
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  display: flex;
+min-height: calc(100vh - 205px);
 }
 
 .App-header {
@@ -24,15 +28,5 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
