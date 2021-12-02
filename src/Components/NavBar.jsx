@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {MenuNoLogin,MenuLogin} from '../Structures/Menus'
 import Menu from './Menu';
 import '../Style/Navbar.css'
 import logo from '../assets/paws.png'
+import {UserContext} from '../Context/UserContext'
+import { Link } from 'react-router-dom';
 
 function NavBar() {
+    const {isLogin, setIsLogin}=useContext(UserContext);
+    
     return (
         <div className="Navbar-container">
-            <img src={logo} />
+            <img src={logo} alt="logo" />
             <div className="Navbar-container-buttons">
            <Menu Menu={MenuNoLogin}></Menu>
-           <Menu Menu={MenuLogin}></Menu> 
+           {isLogin?<Menu Menu={MenuLogin}></Menu>:null}
+           {isLogin?<Link to="/Cerrar" className="Menu-Button">Cerrar sesion</Link>: <Link to="/" className="Menu-Button">Acceder</Link>}
            </div>
         </div>
     );

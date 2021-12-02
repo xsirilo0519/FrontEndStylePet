@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home() {
+function SingInPage() {
     return (
         <div className="NormalPage">
-            Home
-        </div>
+        Registrarse
+    </div>
     );
 }
 
-export default Home;
+export default SingInPage;

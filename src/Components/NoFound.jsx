@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home() {
+function NoFound() {
     return (
         <div className="NormalPage">
-            Home
+            <p style={{fontSize:50}}>Page Not Found</p>
         </div>
     );
 }
 
-export default Home;
+export default NoFound;

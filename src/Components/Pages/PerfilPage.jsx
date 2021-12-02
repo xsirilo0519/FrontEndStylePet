@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home() {
+function PerfilPage(props) {
     return (
         <div className="NormalPage">
-            Home
-        </div>
+        perfil
+    </div>
     );
 }
 
-export default Home;
+export default PerfilPage;

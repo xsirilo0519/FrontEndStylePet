@@ -12,9 +12,17 @@
   src: url("/src/assets/Font/cream-DEMO.otf");
 }
 
+.NormalPage{
+  width: 100%;
+  text-align: center;
+}
+
 .App {
-  display: flex;
-min-height: calc(100vh - 205px);
+min-height: calc(100vh - 245px);
+padding: 20px;
+width: auto;
+margin-left: 20px;
+margin-right: 20px;
 }
 
 .App-header {

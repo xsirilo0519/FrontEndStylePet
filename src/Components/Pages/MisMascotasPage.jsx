@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Home() {
+function MisMascotasPage() {
     return (
         <div className="NormalPage">
-            Home
+            Mis mascotas
         </div>
     );
 }
 
-export default Home;
+export default MisMascotasPage;
