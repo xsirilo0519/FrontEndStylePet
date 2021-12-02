@@ -21,7 +21,7 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
                     <select name="select" value={form.codigo_mascotas==null?"":form.codigo_mascotas.codigo} onChange={(e)=>{setForm({...form,codigo_mascotas:{codigo:e.target.value}})}} >
                         <option key="0" value="0">Seleccione</option>
                            {mascotas.map((mascota)=>{
-                            return <option key={mascota.codigo} value={mascota}>{mascota.codigo}</option>
+                            return <option key={mascota.codigo} value={mascota.codigo}>{mascota.codigo}</option>
                             })}
                    </select>
                    </div>
