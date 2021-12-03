@@ -48,7 +48,7 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                             <br />
                             <button type="button" className="btn btn-block"><Link to="/Signin">Crear cuenta</Link></button>
                         </div>
-                  </form>      
+                  </form>
             </div>
         </div>
      );

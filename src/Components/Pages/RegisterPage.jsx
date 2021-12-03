@@ -3,19 +3,16 @@ import { useNavigate, Link } from "react-router-dom";
 
 import "../../Style/login.css";
 
-function Register({ saveRegister }) {
-  //State para iniciar sesión
-  const [usuario, guardarUsuario] = useState({});
-  const navigate = useNavigate();
+function RegisterPage({ save,usuario,guardarUsuario}) {
+
   //Extraer de usuario
-  const { contrasena, celular, email, name, cedula, confirm = "" } = usuario;
+  const { contrasena="", celular="", email="", name="", cedula="", confirm = "" } = usuario;
 
   const onChange = (e) => {
     guardarUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
     });
-    console.log(e.target.name, e.target.value);
   };
 
   const validate = () => {
@@ -61,12 +58,11 @@ function Register({ saveRegister }) {
   };
 
   //Cuando el usuario quiere iniciar sesión
-  const save = async (e) => {
+  const ValidateData = (e) => {
+    console.log("hola");
     e.preventDefault();
     if (validate()) {
-      const response = await saveRegister(usuario);
-      //response.data;
-      navigate("/Login");
+      save()
     }
   };
 
@@ -74,7 +70,7 @@ function Register({ saveRegister }) {
     <div className="form-usuario">
       <div className="contenedor-form">
         <h1>Crea una cuenta</h1>
-        <form>
+        <form onSubmit={ValidateData}>
           <div className="campo-form">
             <label htmlFor="cedula">Cedula</label>
             <input
@@ -106,6 +102,7 @@ function Register({ saveRegister }) {
               placeholder="Tu Email"
               value={email}
               onChange={onChange}
+              required
             />
           </div>
           <div className="campo-form">
@@ -144,9 +141,7 @@ function Register({ saveRegister }) {
           </div>
 
           <div className="campo-form">
-            <button type="button" className="btn btn-block" onClick={save}>
-              Registrarse
-            </button>
+          <input type="submit" className="btn btn-block" value="Registrar"></input>
             ó&nbsp;
             <br />
             <button type="button" className="btn btn-block"><Link to="/Login">Cancelar</Link></button>
@@ -157,4 +152,4 @@ function Register({ saveRegister }) {
   );
 }
 
-export default Register;
+export default RegisterPage;
