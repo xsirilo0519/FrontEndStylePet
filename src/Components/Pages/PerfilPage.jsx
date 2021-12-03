@@ -1,19 +1,15 @@
 import React, {useState} from 'react';
 import { useNavigate} from 'react-router-dom';
 
-function PerfilPage(editarRegister) {
+function PerfilPage({ edit,usuario,guardarUsuario}) {
 
-  const [usuario, guardarUsuario] = useState({});
-  const navigate = useNavigate();
-
-  const { celular, email, name, cedula} = usuario;
+  const { celular="", email="", name="", cedula=""} = usuario;
 
   const onChange = (e) => {
     guardarUsuario({
       ...usuario,
       [e.target.name]: e.target.value,
     });
-    console.log(e.target.name, e.target.value);
   };
 
   const validate = () => {
@@ -34,12 +30,10 @@ function PerfilPage(editarRegister) {
   };
 
   //Cuando el usuario quiere iniciar sesión
-  const edit = async (e) => {
+  const validarDatos = async (e) => {
     e.preventDefault();
     if (validate()) {
-      const response = await editarRegister(usuario);
-      //response.data;
-      navigate("/Login");
+      edit()
     }
   };
 
@@ -72,7 +66,7 @@ function PerfilPage(editarRegister) {
           </div>
 
           <div className="campo-form">
-            <button type="button" className="btn btn-block" onClick={edit}>
+            <button type="button" className="btn btn-block" onClick={validarDatos}>
               Editar
             </button>
            

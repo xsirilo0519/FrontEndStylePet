@@ -7,7 +7,7 @@ import NotFound from './NoFound'
 import { UserContext } from '../Context/UserContext';
 import {Login,Cerrar} from '../Controllers/UserController';
 import {Register} from '../Controllers/RegisterController'
-import Perfil from './Pages/PerfilPage';
+import {Perfil} from '../Controllers/PerfilController'
 
 
 function Rutas() { 
@@ -24,6 +24,7 @@ function Rutas() {
         <Route path="/Login" exaxt element={isLogin?<Home/>:<Login/>}/>
         <Route path="/Cerrar" exaxt element={isLogin?<Cerrar/>:<Home/>}/>
         <Route path="/Register" exaxt element={isLogin?<Home/>:<Register/>}/>
+        <Route path="/Perfil" exaxt element={isLogin?<Perfil/>:privateRoute()}/>
         <Route path="/404" exact element={<NotFound/>}/>
         <Route path="*" element={<Navigate to="/404"></Navigate>}></Route>
     </Routes>
