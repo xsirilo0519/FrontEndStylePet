@@ -1,0 +1,39 @@
+.Card{
+    display: flex;
+    flex-direction: row;
+    background-color: #4EBFB4;
+    padding: 20px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 25px;
+}
+
+.Card li{
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    cursor: pointer;
+    margin-left: 0;
+    margin: 10px;
+    list-style-type: none;
+}
+
+.Card p{
+    font-size: 30px;
+    margin: 5px;
+    width: auto;
+}
+
+.Card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-container{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 10px;
+}
