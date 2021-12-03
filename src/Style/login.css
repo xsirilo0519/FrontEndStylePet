@@ -47,6 +47,7 @@
     border-radius: .5rem;
     border: none;
     transition: background-color .3s ease;
+    cursor: pointer;
   }
   
   .btn-primario {
