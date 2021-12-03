@@ -21,7 +21,7 @@ export const getEstilista=async(setList)=>{
     console.log("getestilistas");
  };
 
-export const addCita=async(form,setList,list,hora)=>{
+export const addCita=async(form,setList,list,split,estilista)=>{
 
     const data={
         codigo_mascota:{
@@ -33,11 +33,22 @@ export const addCita=async(form,setList,list,hora)=>{
         estilista:{
             cedula:parseInt(form.estilista.cedula)
         },
-        hora:hora
+        hora:split[1]
     }
+    try{
     const aux= await axios.post(HOST_API_CITAS+"/agregar",data).then(res=>{ return res.data})
+    console.log("add");
+    console.log(aux.codigo!==undefined);
+    if(aux.codigo!==undefined){
     setList([...list,aux])
-    console.log("addlista");
+    editTurno(estilista,split)
+    console.log("dentro");
+    return true;
+    }
+    console.log("hi");
+    }catch(error){
+    }
+    return false
  };
 
  export const editTurno=async(form,split)=>{
@@ -113,11 +124,11 @@ export const addCita=async(form,setList,list,hora)=>{
         }else{
             const split=form.hora.split("-")
             setMsg("");
-            addCita(form, setList,list,split[1])
-            editTurno(form,split,setEstilista,estilista)
+            if(addCita(form, setList,list,split,estilista)){
             setForm(resetForm)
             setEstilista([])
             getEstilista(setEstilista);
+            }
         }
     }
 
@@ -128,8 +139,6 @@ export const addCita=async(form,setList,list,hora)=>{
             cedula:cedula
         }
         aux[0].estado= !aux[0].estado
-        console.log(codigo);
-        console.log(aux)
         eliminarCita(codigo,aux[0],setList,list,setEstilista,estilista)
         setForm(resetForm)
     }

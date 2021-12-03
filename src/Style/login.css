@@ -93,7 +93,7 @@
   
   .form-usuario {
       background-color: var(--gris2);
-      height: 100%;
+      height: auto;
       min-height: 800px;
       display: flex;
       align-items: center;
@@ -120,8 +120,7 @@
     flex: 0 0 100px;
     font-family: var(--textFont);
   }
-  .campo-form input[type="password"],
-  .campo-form input[type="number"],
+  .campo-form input[type="contrasena"],
   .campo-form input[type="email"], 
   .campo-form input[type="text"] {
     border: 1px solid #e1e1e1;
@@ -133,8 +132,4 @@
     margin-top: 2rem;
     display: block;
     opacity: .7;
-  }
-
-  input[type="button"]{
-      cursor: pointer;
   }
