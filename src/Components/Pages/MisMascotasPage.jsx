@@ -2,7 +2,6 @@ import React from 'react';
 import '../../Style/Mascotas.css'
 import eliminar from '../../assets/delete.png'
 import edit from '../../assets/edit.png'
-import { Fragment } from 'react';
 function MisMascotasPage({mascotas,eliminarMascota,editarMascotaModo}) {
     return (
         <div className="NormalPage">

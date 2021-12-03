@@ -62,7 +62,7 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
         },
         estado:booleano
     }
-    const aux= await axios.put(HOST_API_TURNO,data).then(res=>{ return res.data})
+     await axios.put(HOST_API_TURNO,data).then(res=>{ return res.data})
     getEstilista(setEstilista)
  }
 
@@ -73,7 +73,7 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
 
  export const eliminarCita=async(codigo,data,setList,list,setEstilista)=>{
     await axios.delete(HOST_API_CITAS+"/eliminar/"+codigo).then(res=>{ return res.data})
-    const aux= await axios.put(HOST_API_TURNO,data).then(res=>{ return res.data})
+     await axios.put(HOST_API_TURNO,data).then(res=>{ return res.data})
     getEstilista(setEstilista);
     setList(list.filter(x=>x.codigo!==codigo))
 }
@@ -98,18 +98,16 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
      const [cortes,setCortes]=useState([]);
      const [estilista,setEstilista]=useState([{}]);
      const [mascota,setMascota]=useState([]);
-     const [form,setForm]=useState([]);
+     const [form,setForm]=useState(resetForm);
     const [msg,setMsg]=useState("");
     const [list,setList]=useState([]);
 
-     useEffect(async()=>{
+     useEffect(()=>{
         var user=JSON.parse(localStorage.getItem("Data"))
         getEstilista(setEstilista);
         getCortes(setCortes);
         setMascota(user.mascotasModels)
         getByMascota(setList,0)
-        setForm(resetForm)
-        console.log("efect");
      },[setCortes,setList])
 
      const ConfirmarValores=async()=>{

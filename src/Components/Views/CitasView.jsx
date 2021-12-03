@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 
 function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores,onChangeMascota}) {
     const[turnos,setTurnos]=useState([]);
@@ -11,6 +11,7 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
             if(estilista.cedula===parseInt(cedula)){
                 setTurnos(estilista.turnos)
             }
+            return null
         })}
     }
 
@@ -50,6 +51,7 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
                            {turnos.map((turno)=>{
                                if(turno.estado){
                             return <option key={turno.id+" "+turno.turno} value={turno.id+"-"+turno.turno+"-"+turno.estado} >{turno.turno}</option>}
+                            return null
                             })}
                    </select>
                    </div>

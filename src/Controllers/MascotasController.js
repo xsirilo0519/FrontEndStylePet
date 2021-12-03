@@ -76,7 +76,7 @@ export const editMascota=async(setMascotas,mascotas,newMascota,User,setUser)=>{
         cedula:User.cedula
     }
 }
-const aux= await axios.put(HOST_API_MASCOTA+"/editar",data).then(res=>{ return res.data})
+ await axios.put(HOST_API_MASCOTA+"/editar",data).then(res=>{ return res.data})
 let listMascotas=mascotas.filter(x=>x.codigo!==data.codigo)
 listMascotas=[...listMascotas,data]
 setMascotas(listMascotas.sort((x,y)=>x.codigo-y.codigo));

@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import { useNavigate} from 'react-router-dom';
+import React from 'react';
 
 function PerfilPage({ edit,usuario,guardarUsuario}) {
 
-  const { celular="", email="", name="", cedula=""} = usuario;
+  const { celular="", name=""} = usuario;
 
   const onChange = (e) => {
     guardarUsuario({
