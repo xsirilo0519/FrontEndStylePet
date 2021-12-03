@@ -2,7 +2,7 @@ import React from "react";
 import eliminar from '../../assets/delete.png';
 function CitasPage({list,cancelarCita}) {
   return (
-    <div className="NormalPage">
+    <div className="page-wrap">
       <table >
       <thead>
         <tr>

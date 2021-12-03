@@ -149,7 +149,7 @@ function Register({ saveRegister }) {
             </button>
             ó&nbsp;
             <br />
-            <Link to="/Login">Cancelar</Link>
+            <button type="button" className="btn btn-block"><Link to="/Login">Cancelar</Link></button>
           </div>
         </form>
       </div>

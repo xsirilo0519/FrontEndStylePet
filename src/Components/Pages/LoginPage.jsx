@@ -31,7 +31,7 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                         />
                     </div>
                     <div className="campo-form">
-                        <label htmlFor="contrasena">contrasena</label>
+                        <label htmlFor="contrasena">contraseña</label>
                         <input 
                             type="password"
                             id="contrasena"
@@ -42,13 +42,13 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                         />
                     </div>
                     <span>{msg}</span>
-                    <div className="campo-form">
-                        <button type="button" className="btn btn-block" onClick={(e)=>{loguear(e)}}>Iniciar Sesión</button>
-                    </div>
-                    ó&nbsp;
-                    <br />
-                    <Link to="/Signin">Crear una cuenta</Link>
-                </form>
+                        <div className="campo-form">
+                            <button type="button" className="btn btn-block" onClick={(e)=>{loguear(e)}}>Iniciar Sesión</button>
+                            ó&nbsp;
+                            <br />
+                            <button type="button" className="btn btn-block"><Link to="/Signin">Crear cuenta</Link></button>
+                        </div>
+                  </form>      
             </div>
         </div>
      );
