@@ -1,9 +1,10 @@
 import React from 'react';
+import home from'../assets/home.jpg';
 
 function Home() {
     return (
         <div className="NormalPage">
-            Home
+            <img src={home} alt="home" />
         </div>
     );
 }
