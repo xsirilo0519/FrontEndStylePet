@@ -7,6 +7,7 @@ import NotFound from './NoFound'
 import { UserContext } from '../Context/UserContext';
 import {Login,Cerrar} from '../Controllers/UserController';
 import SignIn from './Pages/SingInPage';
+import Perfil from './Pages/PerfilPage';
 
 
 function Rutas() { 
@@ -22,6 +23,7 @@ function Rutas() {
         <Route path="/Citas" exact element={isLogin?<Citas/>:privateRoute()}/>
         <Route path="/Login" exaxt element={isLogin?<Home/>:<Login/>}/>
         <Route path="/Cerrar" exaxt element={isLogin?<Cerrar/>:<Home/>}/>
+        <Route path="/Perfil" exaxt element={isLogin?<Perfil/>:<SignIn/>}/>
         <Route path="/404" exact element={<NotFound/>}/>
         <Route path="/Signin" exaxt element={isLogin?<Home/>:<SignIn/>}/>
         <Route path="*" element={<Navigate to="/404"></Navigate>}></Route>

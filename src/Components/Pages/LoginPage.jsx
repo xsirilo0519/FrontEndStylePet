@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import '../../Style/login.css'
 
 function LoginPage({usuario,guardarUsuario,loguear,msg}) {
@@ -31,7 +33,7 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                     <div className="campo-form">
                         <label htmlFor="contrasena">contrasena</label>
                         <input 
-                            type="contrasena"
+                            type="password"
                             id="contrasena"
                             name="contrasena"
                             placeholder="Tu contrasena"
@@ -43,7 +45,9 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                     <div className="campo-form">
                         <button type="button" className="btn btn-block" onClick={(e)=>{loguear(e)}}>Iniciar Sesión</button>
                     </div>
-
+                    ó&nbsp;
+                    <br />
+                    <Link to="/Signin">Crear una cuenta</Link>
                 </form>
             </div>
         </div>

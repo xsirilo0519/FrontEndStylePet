@@ -92,7 +92,7 @@ function Register({ saveRegister }) {
               type="text"
               id="name"
               name="name"
-              placeholder="Tu name"
+              placeholder="Tu nombre"
               value={name}
               onChange={onChange}
             />
@@ -114,7 +114,7 @@ function Register({ saveRegister }) {
               type="number"
               id="celular"
               name="celular"
-              placeholder="Tu Email"
+              placeholder="Tu celular"
               value={celular}
               onChange={onChange}
             />
@@ -125,7 +125,7 @@ function Register({ saveRegister }) {
               type="password"
               id="contrasena"
               name="contrasena"
-              placeholder="Tu contrasena"
+              placeholder="Tu contraseña"
               value={contrasena}
               onChange={onChange}
             />
@@ -137,7 +137,7 @@ function Register({ saveRegister }) {
               type="password"
               id="confirm"
               name="confirm"
-              placeholder="Tu confirm"
+              placeholder="Confirma tu contraseña"
               value={confirm}
               onChange={onChange}
             />
