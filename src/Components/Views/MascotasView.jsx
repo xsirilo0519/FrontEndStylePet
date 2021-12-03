@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import '../../Style/login.css';
 
 function MascotasView({tipo,newMascota,setnewMascota,msg,ConfirmarValores,isEdit,editarMascota}) {
     return (
@@ -17,7 +18,7 @@ function MascotasView({tipo,newMascota,setnewMascota,msg,ConfirmarValores,isEdit
                             })}
                    </select>
             </div>
-            {isEdit?<button onClick={()=>{ editarMascota()}}>Editar</button>:<button onClick={()=>{ ConfirmarValores()}}>Agregar</button>}
+            {isEdit?<button type="button" onClick={()=>{ editarMascota()}}>Editar</button>:<button onClick={()=>{ ConfirmarValores()}}>Agregar</button>}
             <br/>
                       
         </div>
