@@ -16,6 +16,24 @@
   width: 100%;
   text-align: center;
 }
+.li-short{
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  cursor: pointer;
+  margin-left: 40%;
+  list-style-type: none;
+}
+table{
+  width: 100%;
+}
+tbody,thead{
+  margin: 20px;
+}
+
+tr{
+  margin: 50px;
+}
 
 .App {
 min-height: calc(100vh - 245px);
@@ -35,6 +53,11 @@ margin-right: 20px;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.Checkbox-Container{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
 

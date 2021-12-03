@@ -1,9 +1,8 @@
 import React from 'react';
-
 function MisMascotasPage() {
     return (
         <div className="NormalPage">
-            Mis mascotas
+            mis mascotas
         </div>
     );
 }
