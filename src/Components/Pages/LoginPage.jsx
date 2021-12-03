@@ -47,7 +47,7 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                     </div>
                     ó&nbsp;
                     <br/>
-                    <Link to="/Signin">Crear una cuenta</Link>
+                    <Link to="/Register">Crear una cuenta</Link>
                 </form>
             </div>
         </div>

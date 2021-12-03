@@ -11,7 +11,6 @@ function App() {
     const CheckLogin=()=>{
       try{
         var user=JSON.parse(localStorage.getItem("Data"))
-        console.log(user);
         if(user.cedula){
         setIsLogin(true)
         }
