@@ -17,20 +17,12 @@ function PerfilPage(editarRegister) {
   };
 
   const validate = () => {
-    if (!validateField(cedula)) {
-      alert("La cedula es obligatoria");
-      return false;
-    }
     if (!validateField(name)) {
-      alert("La name es obligatoria");
-      return false;
-    }
-    if (!validateField(email)) {
-      alert("La email es obligatoria");
+      alert("El nombre es obligatorio");
       return false;
     }
     if (!validateField(celular)) {
-      alert("La celular es obligatoria");
+      alert("El celular es obligatorio");
       return false;
     }
 

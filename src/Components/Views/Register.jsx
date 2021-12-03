@@ -24,15 +24,15 @@ function Register({ saveRegister }) {
       return false;
     }
     if (!validateField(name)) {
-      alert("La name es obligatoria");
+      alert("El nombre es obligatorio");
       return false;
     }
     if (!validateField(email)) {
-      alert("La email es obligatoria");
+      alert("El email es obligatorio");
       return false;
     }
     if (!validateField(celular)) {
-      alert("La celular es obligatoria");
+      alert("El celular es obligatoria");
       return false;
     }
 
@@ -46,11 +46,11 @@ function Register({ saveRegister }) {
       return false;
     }
     if (!validateField(contrasena)) {
-      alert("La confirm es obligatoria");
+      alert("La confirmacion de contraseña obligatoria");
       return false;
     }
     if (contrasena !== confirm) {
-      alert("alert las contraeñas no coinciden");
+      alert("alerta las contraeñas no coinciden");
       return false;
     }
     return true;
