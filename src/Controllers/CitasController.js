@@ -15,9 +15,9 @@ export const getCortes=async(setList)=>{
 
  };
  
-export const getEstilista=async(setList)=>{
+export const getEstilista=async(setestile)=>{
     const aux= await axios.get(HOST_API_ESTILISTAS+"/buscar").then(res=>{ return res.data})
-    setList(aux)
+    setestile(aux)
  };
 
 export const addCita=async(form,setList,list,split,setEstilista)=>{
@@ -37,17 +37,16 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
     const aux= await axios.post(HOST_API_CITAS+"/agregar",data).then(res=>{ return res.data})
     if(aux.codigo!==undefined){
     setList([...list,aux])
-    editTurno(form,split)
-    getEstilista(setEstilista)
+    editTurno(form,split,setEstilista)
     console.log("dentro");
-    return true;
+    return true
     }
     }catch(error){
     }
     return false
  };
 
- export const editTurno=async(form,split)=>{
+ export const editTurno=async(form,split,setEstilista)=>{
      var booleano;
      if(split[3]==="true"){
         booleano=true;
@@ -64,6 +63,7 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
         estado:booleano
     }
     const aux= await axios.put(HOST_API_TURNO,data).then(res=>{ return res.data})
+    getEstilista(setEstilista)
  }
 
  export const getByMascota=async(setList,mascota)=>{ 
@@ -74,9 +74,8 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
  export const eliminarCita=async(codigo,data,setList,list,setEstilista)=>{
     await axios.delete(HOST_API_CITAS+"/eliminar/"+codigo).then(res=>{ return res.data})
     const aux= await axios.put(HOST_API_TURNO,data).then(res=>{ return res.data})
-    setList(list.filter(x=>x.codigo!==codigo))
-    setEstilista([])
     getEstilista(setEstilista);
+    setList(list.filter(x=>x.codigo!==codigo))
 }
 
 
@@ -97,28 +96,29 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
         }
     }
      const [cortes,setCortes]=useState([]);
-     const [estilista,setEstilista]=useState([]);
+     const [estilista,setEstilista]=useState([{}]);
      const [mascota,setMascota]=useState([]);
      const [form,setForm]=useState([]);
     const [msg,setMsg]=useState("");
     const [list,setList]=useState([]);
 
-     useEffect(()=>{
+     useEffect(async()=>{
         var user=JSON.parse(localStorage.getItem("Data"))
         getEstilista(setEstilista);
         getCortes(setCortes);
         setMascota(user.mascotasModels)
         getByMascota(setList,0)
         setForm(resetForm)
-     },[setEstilista,setCortes,setList])
+        console.log("efect");
+     },[setCortes,setList])
 
-     const ConfirmarValores=()=>{
+     const ConfirmarValores=async()=>{
         if(form.codigo_mascotas.codigo==="0"||form.id_corte.id==="0"||form.estilista.cedula==="0"||form.hora.turno==="0"){
             setMsg("Seleccione todos los campos");
         }else{
             const split=form.hora.split("-")
             setMsg("");
-            if(addCita(form, setList,list,split,setEstilista,estilista)){
+            if(await addCita(form, setList,list,split,setEstilista)){
             setForm(resetForm)
             }
         }
@@ -128,14 +128,14 @@ export const addCita=async(form,setList,list,split,setEstilista)=>{
         getByMascota(setList,selectMascota)
     }
 
-    const cancelarCita=(codigo,cedula,hora)=>{
+    const cancelarCita=async(codigo,cedula,hora)=>{
         let aux=estilista.filter(item=>item.cedula===cedula)
         aux=aux[0].turnos.filter(item=>item.turno===hora);
         aux[0].ced_estilista={
             cedula:cedula
         }
         aux[0].estado= !aux[0].estado
-        eliminarCita(codigo,aux[0],setList,list,setEstilista,estilista)
+        await eliminarCita(codigo,aux[0],setList,list,setEstilista,estilista)
         setForm(resetForm)
     }
     return(
