@@ -46,7 +46,7 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                         <button type="button" className="btn btn-block" onClick={(e)=>{loguear(e)}}>Iniciar Sesión</button>
                     </div>
                     ó&nbsp;
-                    <br />
+                    <br/>
                     <Link to="/Signin">Crear una cuenta</Link>
                 </form>
             </div>

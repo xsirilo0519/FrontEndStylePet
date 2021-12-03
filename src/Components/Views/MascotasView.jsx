@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-function MascotasView({tipo,newMascota,setnewMascota,msg,ConfirmarValores}) {
+function MascotasView({tipo,newMascota,setnewMascota,msg,ConfirmarValores,isEdit,editarMascota}) {
     return (
         <Fragment>
         <div className="Checkbox-Container">
@@ -17,7 +17,8 @@ function MascotasView({tipo,newMascota,setnewMascota,msg,ConfirmarValores}) {
                             })}
                    </select>
             </div>
-            <button onClick={()=>{ ConfirmarValores()}}>Agregar</button><br/>
+            {isEdit?<button onClick={()=>{ editarMascota()}}>Editar</button>:<button onClick={()=>{ ConfirmarValores()}}>Agregar</button>}
+            <br/>
                       
         </div>
         <span>{msg}</span>  

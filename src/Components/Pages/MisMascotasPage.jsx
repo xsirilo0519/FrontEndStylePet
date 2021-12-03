@@ -3,7 +3,7 @@ import '../../Style/Mascotas.css'
 import eliminar from '../../assets/delete.png'
 import edit from '../../assets/edit.png'
 import { Fragment } from 'react';
-function MisMascotasPage({mascotas,eliminarMascota}) {
+function MisMascotasPage({mascotas,eliminarMascota,editarMascotaModo}) {
     return (
         <div className="NormalPage">
             <div className="Card-container">
@@ -16,7 +16,7 @@ function MisMascotasPage({mascotas,eliminarMascota}) {
                             <p>{item.tipo.name}</p><br/>
                             <p>{item.name}</p>
                             </div>
-                            <li className="li-short" style={{ backgroundImage: "url(" + edit + ")" }}  ></li>
+                            <li className="li-short" style={{ backgroundImage: "url(" + edit + ")" }} onClick={()=>{editarMascotaModo(item)}} ></li>
                             <li className="li-short" style={{ backgroundImage: "url(" + eliminar + ")" }} onClick={()=>{eliminarMascota(item.codigo)}}  ></li>
                         </div>
                         )
