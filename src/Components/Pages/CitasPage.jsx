@@ -1,8 +1,8 @@
 import React from "react";
-function CitasPage() {
+import eliminar from '../../assets/delete.png';
+function CitasPage({list,cancelarCita}) {
   return (
     <div className="NormalPage">
-      citas
       <table >
       <thead>
         <tr>
@@ -14,24 +14,29 @@ function CitasPage() {
           <th>Mascota</th>
           <th>Tipo</th>
           <th>Dueño</th>
-          <th>Editar</th>
           <th>Eliminar</th>
         </tr>
         </thead>
-        <tbody>
+        {
+            list.length>0?
+            list.map((cita)=>{
+                return (
+        <tbody key={cita.codigo}>
         <tr>
-          <td>Soleado</td>
-          <td>Mayormente soleado</td>
-          <td>Parcialmente nublado</td>
-          <td>Soleado</td>
-          <td>Mayormente soleado</td>
-          <td>Parcialmente nublado</td>
-          <td>Soleado</td>
-          <td>Mayormente soleado</td>
-          <td>Parcialmente nublado</td>
-          <td>Soleado</td>
+          <td>{cita.codigo}</td>
+          <td>{cita.id_corte.name}</td>
+          <td>{cita.id_corte.precio}</td>
+          <td>{cita.estilista.name}</td>
+          <td>{cita.hora}</td>
+          <td>{cita.codigo_mascota.name}</td>
+          <td>{cita.codigo_mascota.tipo.name}</td>
+          <td>{cita.codigo_mascota.propietario.name}</td>
+          <td><li className="li-short" style={{ backgroundImage: "url(" + eliminar + ")" }} onClick={()=>{cancelarCita(cita.codigo,cita.estilista.cedula,cita.hora)}} ></li></td>
         </tr>
         </tbody>
+                )
+            }):null
+        }
       </table>
     </div>
   );
