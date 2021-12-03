@@ -1,4 +1,6 @@
 import React, { useState} from 'react';
+import {Link} from 'react-router-dom';
+
 import '../../Style/login.css'
 
 function Login() {
@@ -58,6 +60,9 @@ function Login() {
                     <div className="campo-form">
                         <button type="button" className="btn btn-block" onClick={onSubmit}>Iniciar Sesión</button>
                     </div>
+                    ó&nbsp;
+                    <br/>
+                   <Link to="/Signin" >Crea una cuenta</Link>
 
                 </form>
             </div>
