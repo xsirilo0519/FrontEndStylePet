@@ -1,11 +1,12 @@
 import React from "react";
 import eliminar from '../../assets/delete.png';
+import '../../Style/Citas.css';
 function CitasPage({list,cancelarCita}) {
   return (
     <div className="page-wrap">
-      <table >
+      <table className="table">
       <thead>
-        <tr>
+        <tr className="th">
           <th>Codigo</th>
           <th>Corte</th>
           <th>Precio</th>

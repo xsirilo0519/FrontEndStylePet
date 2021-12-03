@@ -1,0 +1,31 @@
+.table{
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+.table td span{
+    cursor: pointer;
+}
+
+.table tr:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.05);
+}
+    
+.tr, th, td{
+    border: 1px solid #000;
+    padding: 5px 10px;
+}
+
+.th, th{
+    background-color: #0D6973;
+    color: #fff;
+    font-weight: 600;
+    width: 100px;
+}
+
+
+
