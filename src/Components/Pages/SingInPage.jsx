@@ -1,11 +1,8 @@
 import React from 'react';
+import RegisterController from "../../Controllers/RegisterController";
 
 function SingInPage() {
-    return (
-        <div className="NormalPage">
-        Registrarse
-    </div>
-    );
+    return <RegisterController/>;
 }
 
 export default SingInPage;

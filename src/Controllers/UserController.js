@@ -3,7 +3,6 @@ import LoginPage from '../Components/Pages/LoginPage';
 import { Fragment, useContext, useState } from 'react';
 import { UserContext } from '../Context/UserContext';
 
-
 const HOST_API_USER = "http://localhost:8080/Usuario";
 
 export const getLogin=async(data,setMsg,setIsLogin)=>{
@@ -23,7 +22,6 @@ export const Cerrar=()=>{
     setIsLogin(false)
     return(<Fragment></Fragment>)
 }
-
 
 
 export const Login =()=>{
