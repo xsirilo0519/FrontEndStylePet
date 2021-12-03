@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import '../../Style/login.css';
 
 function MascotasView({tipo,newMascota,setnewMascota,msg,ConfirmarValores,isEdit,editarMascota}) {
