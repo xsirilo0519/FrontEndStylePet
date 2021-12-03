@@ -8,17 +8,18 @@ function App() {
   const [isLogin, setIsLogin] = useState(false)
 
   useEffect(()=>{
-    /*const CheckLogin=()=>{
+    const CheckLogin=()=>{
       try{
         var user=JSON.parse(localStorage.getItem("Data"))
-        if(user.id){
+        console.log(user);
+        if(user.cedula){
         setIsLogin(true)
         }
       }catch{
         setIsLogin(false)
       }
     }
-    CheckLogin()*/
+    CheckLogin()
     console.log("hola");
   },[])
 
