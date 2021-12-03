@@ -20,6 +20,7 @@ export const Cerrar=()=>{
     const {setIsLogin}=useContext(UserContext);
     localStorage.removeItem("Data")
     setIsLogin(false)
+    console.clear();
     return(<Fragment></Fragment>)
 }
 
