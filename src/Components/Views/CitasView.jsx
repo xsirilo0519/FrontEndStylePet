@@ -16,8 +16,9 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
     }
 
     return (
+        <div style={{textAlign:"center"}}>
         <div className="Checkbox-Container">
-                    <div style={{margin:20}}>
+                    <div className="Contenedor-comboBox">
                         <p>Nombre de mascota</p>
                     <select name="select" value={form.codigo_mascotas==null?"":form.codigo_mascotas.codigo} onChange={(e)=>{onChangeMascota(parseInt(e.target.value));setForm({...form,codigo_mascotas:{codigo:e.target.value}})}} >
                         <option key="500" value="0">Seleccione</option>
@@ -26,7 +27,7 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
                             })}
                    </select>
                    </div>
-                   <div style={{margin:20}}>
+                   <div className="Contenedor-comboBox">
                    <p>Tipo de corte</p>
                     <select  name="select" value={form.id_corte==null?"":form.id_corte.id} onChange={(e)=>{setForm({...form,id_corte:{id:e.target.value}})}} >
                             <option key="400" value="0">Seleccione</option>
@@ -35,7 +36,7 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
                             })}
                    </select>
                    </div>  
-                   <div style={{margin:20}}>
+                   <div className="Contenedor-comboBox">
                    <p>Estilista</p>     
                    <select  name="select" value={form.estilista==null?"":form.estilista.cedula} onChange={(e)=>{AsignarTurno(e.target.value);setForm({...form,estilista:{cedula:e.target.value}})}} >
                             <option key="200" value="0">Seleccione</option>
@@ -44,7 +45,7 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
                             })}
                    </select>
                    </div>
-                   <div style={{margin:20}}>
+                   <div className="Contenedor-comboBox">
                    <p>Hora</p> 
                    <select name="select" value={form.hora==null?"":form.hora} onChange={(e)=>{setForm({...form,hora:e.target.value})}} >
                             <option key="300" value="0">Seleccione</option>
@@ -55,11 +56,9 @@ function CitasView({cortes,estilistas,mascotas,form,setForm,msg,ConfirmarValores
                             })}
                    </select>
                    </div>
-                   <button onClick={()=>{setTurnos([]); ConfirmarValores()}}>Agregar</button><br/>
-                   <span>{msg}</span>
-                   
-            
-    
+                   <div className="bnt-views" onClick={()=>{setTurnos([]); ConfirmarValores()}}>Agregar</div>
+        </div>
+        <span style={{color:"red"}}>{msg}</span>
         </div>
     );
 }

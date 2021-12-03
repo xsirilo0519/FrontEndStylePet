@@ -41,12 +41,12 @@ function LoginPage({usuario,guardarUsuario,loguear,msg}) {
                             onChange={onChange}
                         />
                     </div>
-                    <span>{msg}</span>
+                    <span style={{color:"red"}}>{msg}</span>
                         <div className="campo-form">
                             <button type="button" className="btn btn-block" onClick={(e)=>{loguear(e)}}>Iniciar Sesión</button>
                             ó&nbsp;
                             <br />
-                            <button type="button" className="btn btn-block"><Link to="/Register">Crear cuenta</Link></button>
+                           <Link className="btn btn-block" style={{textAlign:"center",textDecoration:"none",color:"black",backgroundColor:"#edf2f6"}} to="/Register">Crear cuenta</Link>
                         </div>
                   </form>
             </div>

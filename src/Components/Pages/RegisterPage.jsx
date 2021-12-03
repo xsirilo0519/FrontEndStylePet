@@ -144,7 +144,7 @@ function RegisterPage({ save,usuario,guardarUsuario}) {
           <input type="submit" className="btn btn-block" value="Registrar"></input>
             ó&nbsp;
             <br />
-            <button type="button" className="btn btn-block"><Link to="/Login">Cancelar</Link></button>
+            <Link className="btn btn-block" style={{textAlign:"center",textDecoration:"none",color:"black",backgroundColor:"#edf2f6"}} to="/Login">Cancelar</Link>
           </div>
         </form>
       </div>

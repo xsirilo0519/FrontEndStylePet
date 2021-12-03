@@ -11,6 +11,10 @@
   font-family: "TituloFont";
   src: url("/src/assets/Font/cream-DEMO.otf");
 }
+@font-face {
+  font-family: "Paw";
+  src: url("/src/assets/Font/Animal\ Paw.ttf");
+}
 
 .NormalPage{
   width: 100%;
@@ -31,8 +35,45 @@ tbody,thead{
   margin: 20px;
 }
 
+.Logo-Letra{
+font-family: Paw;
+font-size: 200px;
+position: absolute;
+top: 50%;
+left: 33%;
+}
+
+
+.bnt-views{
+  background-color: #37A6A6;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 15px;
+  border: solid #37A6A6 2px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size:18px;
+}
+.bnt-views:hover{
+  background-color: #4EBFB4;
+  border: solid black 2px;
+}
+
 tr{
   margin: 50px;
+}
+.Contenedor-comboBox{
+  margin: 20px;
+}
+.Contenedor-comboBox select,input{
+  border-radius: 20px;
+  height: 20px;
+  width: 150px;
+  margin-top: 10px;
+}
+.Contenedor-comboBox input{
+  width: 200px;
+  padding: 1px;
 }
 
 .App {

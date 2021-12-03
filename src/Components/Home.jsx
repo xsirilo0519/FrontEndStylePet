@@ -4,7 +4,8 @@ import home from'../assets/home.jpg';
 function Home() {
     return (
         <div className="NormalPage">
-            <img src={home} alt="home" />
+            <img style={{borderRadius:1000}} src={home} alt="home" />
+            <p className="Logo-Letra">Style Pet</p>
         </div>
     );
 }
